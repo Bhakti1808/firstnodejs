@@ -92,7 +92,6 @@ tos.delete('/:id',cors(), (req, res) => {
 var server = tos.listen(1200,function(){
     var host = server.address().address
     var port = server.address().port
-    tos.listen(1200, "192.183.190.3");
 
     console.log("this tos listening at http://%s:%s",host,port)
     // console.log(todo)
