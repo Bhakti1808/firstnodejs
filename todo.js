@@ -1,5 +1,5 @@
 window.alert = function() { throw("An alert called") }
-const url = "http://localhost:3000/";
+const url = "https://desolate-retreat-17067.herokuapp.com/";
 var pending = []
 var completed = []
 
