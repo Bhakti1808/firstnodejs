@@ -74,7 +74,6 @@ tos.put('/:id', cors(), (req, res) => {
 
     // let index = todo.findIndex(item => item.id === req.query.id);
     // todo.splice(index, 1); 
-    
    });
 
 tos.delete('/:id',cors(), (req, res) => {
@@ -89,7 +88,7 @@ tos.delete('/:id',cors(), (req, res) => {
     }
    });
 
-var server = tos.listen(1200,function(){
+var server = tos.listen( process.env.PORT || 3000,function(){
     var host = server.address().address
     var port = server.address().port
 
