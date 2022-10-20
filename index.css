@@ -53,7 +53,8 @@
     cursor: pointer;
 }
 #add:hover{
-    background-color:lightgrey;
+    border: 2px solid black;
+
 }
 #pend{
     width: auto;
