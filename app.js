@@ -5,10 +5,8 @@ const bodyParser = require('body-parser');
 // const fs = require('fs')
 
 var todo = require('./db.json');
-tos.use(bodyParser.urlencoded({ extended: false }))
 
 tos.use(bodyParser.json())
-var urlencoded = bodyParser.urlencoded({ extended: false });
 const {v4 : uuidv4} = require('uuid');
 tos.use(express.json());
 tos.use(express.static('public'));
@@ -44,7 +42,7 @@ tos.get('/:id',cors(),(req,res) => {
     });
     
 
-tos.post('/',urlencoded,cors(),(req,res)=>{
+tos.post('/',(req,res)=>{
     
     const id = uuidv4();
     // var newtodo = req.body.newtodo;
@@ -61,7 +59,7 @@ tos.post('/',urlencoded,cors(),(req,res)=>{
     
 
 })
-tos.put('/:id', cors(), (req, res) => {
+tos.put('/:id', (req, res) => {
     const {id} = req.params
     let index = todo.findIndex(item => item.id === id);
     if (index > -1) {
@@ -76,7 +74,7 @@ tos.put('/:id', cors(), (req, res) => {
     // todo.splice(index, 1); 
    });
 
-tos.delete('/:id',cors(), (req, res) => {
+tos.delete('/:id',(req, res) => {
     const {id} = req.params
     let index = todo.findIndex(item => item.id === id);
     if (index > -1) {
@@ -92,6 +90,6 @@ var server = tos.listen( process.env.PORT || 3000,function(){
     var host = server.address().address
     var port = server.address().port
 
-    console.log("this tos listening at http://%s:%s",host,port)
+    console.log("this listening at http://%s:%s",host,port)
     // console.log(todo)
 })
